@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
 import "@/styles/globals.css";
 import { queryClient } from "@/lib/react-query";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function RootLayout({
   children,
@@ -13,12 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
+      <body className="antialiased">
         <Header />
         <QueryClientProvider client={queryClient}>
-          {children}
+          <Suspense fallback={<Skeleton />}>
+            {children}
+          </Suspense>
         </QueryClientProvider>
         <Footer />
       </body>
