@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { X } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
@@ -9,7 +8,6 @@ import { Label } from '@/components/ui/label';
 
 const Search = ({
     placeholder,
-    page,
     handleSetSearch,
     showLabel = true,
 }: {

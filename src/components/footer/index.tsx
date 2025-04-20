@@ -1,7 +1,6 @@
 import React from 'react';
 import Logo from '../logo';
 import { Separator } from '../ui/separator';
-import Image from 'next/image';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 
