@@ -3,6 +3,8 @@ import Logo from "../logo";
 import { Separator } from "../ui/separator";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
+import { PrivacyPolicy } from "../privacy-policy";
+import { TermsAndConditions } from "../terms-conditions";
 
 export function Footer() {
     return (
@@ -16,14 +18,22 @@ export function Footer() {
 
                 <div className="flex flex-col gap-20 md:flex-row md:items-center justify-between">
                     <div className="flex flex-col md:flex-row md:items-center gap-8">
-                        <p>Terms & Conditions</p>
-                        <p>Privacy Policy</p>
+                        <TermsAndConditions />
+                        <PrivacyPolicy />
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <Facebook size={36} />
-                        <Twitter size={36} />
-                        <Instagram size={36} />
+                        <Link href='https://www.facebook.com/'>
+                            <Facebook size={36} />
+                        </Link>
+
+                        <Link href='https://x.com/'>
+                            <Twitter size={36} />
+                        </Link>
+
+                        <Link href='https://www.instagram.com/'>
+                            <Instagram size={36} />
+                        </Link>
                     </div>
                 </div>
             </div>

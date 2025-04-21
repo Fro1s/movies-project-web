@@ -24,20 +24,27 @@ const Search = ({
 
     useEffect(() => {
         const handler = setTimeout(() => {
-            handleSetSearch(searchTerm);
-
+            const currentSearch = searchParams.get('search') || '';
             const params = new URLSearchParams(window.location.search);
-            params.set('search', searchTerm);
-            if (!searchTerm) params.delete('search');
-            if (searchTerm !== '') params.set('page', '1');
 
-            router.push(`${window.location.pathname}?${params.toString()}`);
+            if (searchTerm !== currentSearch) {
+                handleSetSearch(searchTerm);
+
+                if (!searchTerm) {
+                    params.delete('search');
+                } else {
+                    params.set('search', searchTerm);
+                    params.set('page', '1');
+                }
+
+                router.push(`${window.location.pathname}?${params.toString()}`);
+            }
         }, 1000);
 
         return () => {
             clearTimeout(handler);
         };
-    }, [searchTerm, router, handleSetSearch]);
+    }, [searchTerm, searchParams, router, handleSetSearch]);
 
     return (
         <div className="flex flex-col gap-4 relative">

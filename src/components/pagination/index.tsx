@@ -21,6 +21,8 @@ export function Pagination({
     return (
         <div className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
             <Button
+                data-testid="pagination-prev"
+                aria-label="previous-page"
                 disabled={pageIndex === 1}
                 onClick={() => onPageChange(pageIndex - 1)}
                 className="w-10 h-10 sm:w-12 sm:h-12 gap-2.5 p-2 sm:p-4 rounded-lg bg-white text-primary border border-primary hover:text-white hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"
@@ -40,8 +42,8 @@ export function Pagination({
                         disabled={page === pageIndex}
                         onClick={() => onPageChange(page)}
                         className={`w-10 h-10 sm:w-12 sm:h-12 gap-2.5 p-2 sm:p-4 rounded-lg border ${pageIndex === page
-                                ? "text-white bg-primary border-primary"
-                                : "bg-white hover:bg-primary text-secondary border-primary hover:text-white"
+                            ? "text-white bg-primary border-primary"
+                            : "bg-white hover:bg-primary text-secondary border-primary hover:text-white"
                             }`}
                     >
                         {page}
@@ -53,6 +55,8 @@ export function Pagination({
             )}
 
             <Button
+                data-testid="pagination-next"
+                aria-label="next-page"
                 disabled={pageIndex === totalPages}
                 onClick={() => onPageChange(pageIndex + 1)}
                 className="w-10 h-10 sm:w-12 sm:h-12 gap-2.5 p-2 sm:p-4 rounded-lg bg-white text-primary border border-primary hover:text-white hover:bg-primary disabled:opacity-50 disabled:cursor-not-allowed"

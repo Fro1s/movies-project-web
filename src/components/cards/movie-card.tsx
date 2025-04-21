@@ -11,7 +11,7 @@ export function MovieCard({ title, year, image, crew, rating }: MovieCardProps) 
     const [hasImageError, setHasImageError] = useState(false);
 
     return (
-        <Card className="w-full bg-background-card min-w-[240px] max-w-full md:max-w-[320px] h-[602px] p-4 flex flex-col justify-between mx-auto hover:shadow-sm hover:border-primary hover:shadow-primary transition-shadow duration-300 ease-in-out cursor-pointer overflow-visible">
+        <Card data-testid="movie-card" className="w-full bg-background-card min-w-[240px] max-w-full md:max-w-[320px] h-[602px] p-4 flex flex-col justify-between mx-auto hover:shadow-sm hover:border-primary hover:shadow-primary transition-shadow duration-300 ease-in-out cursor-pointer overflow-visible">
             <div className="relative w-full h-[372px] rounded-xl overflow-hidden">
                 {!hasImageError ? (
                     <Image
