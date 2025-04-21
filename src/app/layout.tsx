@@ -16,15 +16,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col antialiased">
-        <Header />
-        <QueryClientProvider client={queryClient}>
-          <main className="flex-1">
-            <Suspense fallback={<Skeleton />}>
+        <Suspense fallback={<Skeleton />}>
+          <Header />
+          <QueryClientProvider client={queryClient}>
+            <main className="flex-1">
               {children}
-            </Suspense>
-          </main>
-        </QueryClientProvider>
-        <Footer />
+            </main>
+          </QueryClientProvider>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
