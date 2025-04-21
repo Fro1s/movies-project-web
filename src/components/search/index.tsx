@@ -56,7 +56,7 @@ const Search = ({
             <Input
                 placeholder={placeholder}
                 id="search-input"
-                className="hover:border-primary focus:border-primary focus:ring-0 focus:outline-none"
+                className="hover:border-primary focus:border-primary text-black focus:ring-0 focus:outline-none"
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
             />
