@@ -15,12 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="min-h-screen flex flex-col antialiased">
         <Header />
         <QueryClientProvider client={queryClient}>
-          <Suspense fallback={<Skeleton />}>
-            {children}
-          </Suspense>
+          <main className="flex-1">
+            <Suspense fallback={<Skeleton />}>
+              {children}
+            </Suspense>
+          </main>
         </QueryClientProvider>
         <Footer />
       </body>
