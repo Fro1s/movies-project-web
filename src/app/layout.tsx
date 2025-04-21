@@ -21,8 +21,14 @@ export default function RootLayout({
         <meta name="description" content="Projeto de catálogo de filmes, permitindo listar e visualizar os filmes mais bem avaliados com informações como título, ano de lançamento, elenco e nota." />
         <meta name="keywords" content="catalogo de filmes, filmes bem avaliados, Next.js, React, Tailwind CSS, Cypress, filmes" />
         <meta name="author" content="Seu Nome ou Nome da Equipe" />
+
         <meta property="og:title" content="Movies Project Web - Catálogo de Filmes" />
         <meta property="og:description" content="Exiba os melhores filmes, com destaque para avaliações, ano de lançamento, elenco e muito mais. Moderno e responsivo!" />
+        <meta property="og:image" content="/images/site-image.jpeg" />
+        <meta property="og:url" content="https://movies-project-web.vercel.app/" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Movies Project Web - Catálogo de Filmes" />
         <meta name="twitter:description" content="Projeto de catálogo de filmes, permitindo listar e visualizar os filmes mais bem avaliados com informações como título, ano de lançamento, elenco e nota." />
       </Head>
