@@ -226,26 +226,28 @@ const CarouselNext = React.forwardRef<
 CarouselNext.displayName = 'CarouselNext';
 
 const CarouselSteps = React.forwardRef<HTMLDivElement, CarouselStepsProps>(
-  ({ size, ...props }, ref) => {
+  ({ size, className, ...props }, ref) => {
     const { api } = useCarousel();
 
     return (
-      <div className="flex items-center justify-center gap-4 pt-2">
+      <div
+        ref={ref}
+        className={cn("flex items-center justify-center gap-4 pt-2 z-50", className)}
+        {...props}
+      >
         {Array.from({ length: size }).map((_, index) => (
           <div
-            ref={ref}
             key={index}
-            className={cn('w-4 h-4 rounded-full bg-zinc-300', {
-              'bg-zinc-500': index === api?.selectedScrollSnap(),
+            className={cn("w-4 h-4 rounded-full bg-white/60", {
+              "bg-white": index === api?.selectedScrollSnap(),
             })}
-            {...props}
-          ></div> 
+          ></div>
         ))}
       </div>
     );
-  },
+  }
 );
-CarouselSteps.displayName = 'CarouselSteps';
+CarouselSteps.displayName = "CarouselSteps";
 
 
 export {

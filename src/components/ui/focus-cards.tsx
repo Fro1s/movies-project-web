@@ -17,7 +17,7 @@ const FocusCardWrapper = React.memo(
       onMouseLeave={() => setHovered(null)}
       className={cn(
         "transition-all duration-300 ease-out",
-        hovered !== null && hovered !== index && "blur-[1px] scale-[0.98]"
+        hovered !== null && hovered !== index && "blur-[1px]"
       )}
     >
       {children}
