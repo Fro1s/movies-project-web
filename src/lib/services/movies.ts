@@ -2,7 +2,7 @@ import { ApiResponse, ISearch } from "../types";
 import { api } from "./api";
 
 export const moviesService = {
-    async list({ page, per_page, search, disablePagination = false }: ISearch & { disablePagination?: boolean }): Promise<ApiResponse> {
+    async list({ page, per_page, disablePagination = false }: ISearch & { disablePagination?: boolean }): Promise<ApiResponse> {
         const query = new URLSearchParams();
 
         if (!disablePagination) {

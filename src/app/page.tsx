@@ -7,9 +7,7 @@ import { Pagination } from "@/components/pagination";
 import { useRouter, useSearchParams } from "next/navigation";
 import { CarouselMain } from "@/components/carousel/highlights-carousel";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useState } from "react";
 import { z } from "zod";
-import Search from "@/components/search";
 import { Movie } from "@/lib/types";
 import { FocusCards } from "@/components/ui/focus-cards";
 
